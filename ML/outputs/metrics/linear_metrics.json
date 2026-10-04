@@ -1,0 +1,32 @@
+{
+  "R2_log":{
+    "A: experience only":0.819,
+    "B: + seniority":0.924,
+    "C: full model":0.939
+  },
+  "R2_LPA":{
+    "A: experience only":0.065,
+    "B: + seniority":0.881,
+    "C: full model":0.905
+  },
+  "MAE_LPA":{
+    "A: experience only":7.435,
+    "B: + seniority":3.883,
+    "C: full model":3.511
+  },
+  "MSE_LPA":{
+    "A: experience only":389.664,
+    "B: + seniority":49.594,
+    "C: full model":39.449
+  },
+  "RMSE_LPA":{
+    "A: experience only":19.74,
+    "B: + seniority":7.042,
+    "C: full model":6.281
+  },
+  "CV_R2_log":{
+    "A: experience only":0.817,
+    "B: + seniority":0.926,
+    "C: full model":0.94
+  }
+}
