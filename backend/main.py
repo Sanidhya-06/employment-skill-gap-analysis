@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from sklearn.preprocessing import StandardScaler
 
@@ -17,6 +18,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 ML_DIR = ROOT_DIR / "ML"
 MODEL_DIR = ML_DIR / "models"
 FEATURES_PATH = ML_DIR / "data" / "processed" / "features_dataset.csv"
+FIGURES_DIR = ML_DIR / "outputs" / "figures"
 
 LOGISTIC_FEATURES = [
     "years_experience",
@@ -179,6 +181,7 @@ def make_model_features(profile: ProfileInput) -> tuple[pd.DataFrame, pd.DataFra
 
 
 app = FastAPI(title="Employment Skill Gap Analysis API", version="1.0.0")
+app.mount("/ml-figures", StaticFiles(directory=FIGURES_DIR, check_dir=True), name="ml-figures")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[

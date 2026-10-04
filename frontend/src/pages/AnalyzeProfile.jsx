@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card, PageHeader } from '../components/UI'
 import ProfileFormField from '../components/ProfileFormField'
-import { analyzeProfile } from '../services/analysisApi'
+import { analyzeProfile } from '../services/api'
 import './AnalyzeProfile.css'
 
 const initialProfile = {

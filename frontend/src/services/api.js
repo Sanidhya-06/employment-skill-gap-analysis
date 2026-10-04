@@ -1,4 +1,4 @@
-const ANALYZE_URL = 'http://127.0.0.1:8000/analyze'
+const ANALYZE_URL = 'http://localhost:8000/analyze'
 
 export async function analyzeProfile(profile) {
   let response
@@ -9,7 +9,7 @@ export async function analyzeProfile(profile) {
       body: JSON.stringify(profile),
     })
   } catch {
-    throw new Error('Could not reach the analysis API. Check that FastAPI is running at http://127.0.0.1:8000.')
+    throw new Error('Could not reach the analysis API. Check that FastAPI is running at http://localhost:8000.')
   }
 
   const body = await response.json().catch(() => null)
