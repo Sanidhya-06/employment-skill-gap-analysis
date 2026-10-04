@@ -1,0 +1,7 @@
+import { Link } from 'react-router-dom'
+
+export function PageHeader({ eyebrow, title, description, actions }) { return <header className="page-header"><div><div className="eyebrow-row"><span className="status-dot"/><span className="eyebrow">{eyebrow}</span></div><h1>{title}</h1><p>{description}</p></div>{actions && <div className="header-actions">{actions}</div>}</header> }
+export function Card({ className = '', children }) { return <section className={`card ${className}`}>{children}</section> }
+export function StatCard({ label, value, note, tone = 'blue', icon }) { return <Card className="stat-card"><div className="stat-top"><span className="stat-label">{label}</span><span className={`stat-icon ${tone}`}>{icon}</span></div><div className="stat-value">{value}</div><div className="stat-foot">{note}</div><span className={`stat-accent ${tone}`}/></Card> }
+export function ChartCard({ title, caption, className = '', children, action }) { return <Card className={`chart-card ${className}`}><div className="card-head"><div><h2 className="card-title">{title}</h2><div className="card-caption">{caption}</div></div>{action}</div>{children}</Card> }
+export function ArrowLink({ to, children }) { return <Link className="button" to={to}>{children}<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></Link> }
